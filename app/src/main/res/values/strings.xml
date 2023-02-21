@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">LoginApplicationNL</string>
+    <string name="txt_sub_login">Please sign-in to your account and start the adventure</string>
+    <string name="txt_email">Email <font color='#EA5455'>*</font></string>
+    <string name="txt_hint_email">johndoe@gmail.com</string>
+    <string name="txt_hint_password">********</string>
+    <string name="txt_password">Password <font color='#EA5455'>*</font></string>
+    <string name="cb_remember_me">Remember me</string>
+    <string name="btn_login">Login</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="txt_header_login">Welcome to Entrance Test Interview!</string>
+    <string name="txt_header_sign_up">Adventure starts here</string>
+    <string name="txt_sub_sign_up">Make your app management easy and fun!</string>
+    <string name="edt_first_name">First name <font color='#EA5455'>*</font></string>
+    <string name="edt_last_name">Last name <font color='#EA5455'>*</font> </string>
+    <string name="btn_sign_up">Sign up</string>
+    <string name="txt_policy"><![CDATA[privacy policy & terms]]></string>
+    <string name="edt_email">Email</string>
+    <string name="cb_agree">I agree to</string>
+    <string name="txt_or">or</string>
+    <string name="txtPlatform">New on our platform ?</string>
+    <string name="txtCreateAccount">Create an account</string>
+    <string name="iconfacebook">iconFacebook</string>
+    <string name="ic_twitter">TODO</string>
+    <string name="ic_gmail">TODO</string>
+    <string name="ic_git">TODO</string>
+    <string name="txt_new_platform">New on our platform ?</string>
+    <string name="txt_create_account">Create an account</string>
+    <string name="txt_accounted">Already have an account?</string>
+    <string name="txt_sign_in">Sign in instead</string>
+    <string name="txt_forgot_password">Forgot Password?</string>
+    <string name="msg_email">Email is required</string>
+    <string name="msg_password">Password is required</string>
+    <string name="title_welcome">Welcome to Demo App</string>
+    <string name="hint_name">johndoe</string>
+</resources>

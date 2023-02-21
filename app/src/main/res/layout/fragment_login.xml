@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.login.LoginFragment">
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_140sdp"
+        android:layout_alignParentBottom="true"
+        android:layerType="software"
+        android:scaleType="centerCrop"
+        android:src="@drawable/illu_login"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@drawable/illu_login" />
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="@dimen/_12sdp"
+        android:orientation="vertical"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtHeader1"
+            style="@style/HeadingH4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_12sdp"
+            android:text="@string/txt_header_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtParagrap"
+            style="@style/Paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/txt_sub_login"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtHeader1" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtTitleEmail"
+            style="@style/Paragraph"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/_17sdp"
+            android:text="@string/txt_email" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_email"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/edt_background"
+            android:hint="@string/txt_hint_email"
+            android:text="test1@gmail.com"
+            android:inputType="textEmailAddress"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:textColorHint="@color/french_gray"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtEmailErrorMessage"
+            style="@style/ParagraphSmallError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_email"
+            android:visibility="invisible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:orientation="horizontal"
+            android:weightSum="1">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtTitlePassword"
+                style="@style/Paragraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_password"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtForgetPassword"
+                style="@style/Paragraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/txt_forgot_password"
+                android:textColor="@color/cornflower_blue"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/edt_password"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_marginTop="2dp"
+            android:background="@drawable/edt_background"
+            android:hint="@string/txt_hint_password"
+            android:text="12345678"
+            android:inputType="textPassword"
+            android:paddingStart="@dimen/_15sdp"
+            android:paddingEnd="@dimen/_15sdp"
+            android:textColorHint="@color/french_gray"
+            tools:layout_editor_absoluteX="0dp" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/txtPasswordErrorMessage"
+            style="@style/ParagraphSmallError"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/msg_password"
+            android:visibility="invisible" />
+
+        <androidx.appcompat.widget.AppCompatCheckBox
+            android:id="@+id/checkBox"
+            style="@style/Paragraph"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/cb_remember_me" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnLogin"
+            style="@style/Button"
+            android:layout_width="@dimen/_280sdp"
+            android:layout_height="@dimen/_38sdp"
+            android:layout_gravity="center"
+            android:background="@drawable/button_custom"
+            android:text="@string/btn_login"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/checkBox" />
+
+        <androidx.appcompat.widget.LinearLayoutCompat
+            android:id="@+id/llcCreateAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="14dp"
+            android:orientation="horizontal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btnLogin">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPlatform"
+                style="@style/Paragraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/txtPlatform" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtCreateAccount"
+                style="@style/Paragraph"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_4sdp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/txtCreateAccount"
+                android:textColor="@color/cornflower_blue"
+                app:layout_constraintStart_toEndOf="@+id/txtPlatform"
+                app:layout_constraintTop_toBottomOf="@+id/appCompatButton" />
+        </androidx.appcompat.widget.LinearLayoutCompat>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="@dimen/_11sdp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/llcCreateAccount">
+
+            <TextView
+                android:id="@+id/tvText"
+                style="@style/Paragraph2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/txt_or" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="16dp"
+                android:layout_toStartOf="@id/tvText"
+                android:background="#E9EAEC" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_centerVertical="true"
+                android:layout_marginEnd="16dp"
+                android:layout_toEndOf="@id/tvText"
+                android:background="#E9EAEC" />
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/iconfacebook"
+                android:src="@drawable/ic_facebook" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:contentDescription="@string/ic_twitter"
+                android:src="@drawable/ic_twitter" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:contentDescription="@string/ic_gmail"
+                android:src="@drawable/ic_mail" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/_11sdp"
+                android:contentDescription="@string/ic_git"
+                android:src="@drawable/ic_git" />
+        </LinearLayout>
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+</androidx.constraintlayout.widget.ConstraintLayout>
