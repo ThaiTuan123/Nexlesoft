@@ -15,6 +15,14 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>() {
         signIn()
     }
 
+    override fun registerLiveData() {
+        //TODO("Not yet implemented")
+    }
+
+    override fun registerEvent() {
+        //TODO("Not yet implemented")
+    }
+
     private fun signIn() {
         viewBinding.txtSignIn.setOnClickListener() {
             findNavController().navigateUp()

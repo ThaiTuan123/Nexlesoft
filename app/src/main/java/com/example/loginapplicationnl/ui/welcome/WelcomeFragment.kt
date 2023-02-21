@@ -11,10 +11,16 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding, WelcomeViewModel>()
         FragmentWelcomeBinding.inflate(inflater)
 
     override fun setUpView() {
+        //TODO setup view
+    }
 
+    override fun registerLiveData() {
         val res = arguments?.getParcelable("LoginResponse") as? LoginResponses
-        viewBinding.txtHeader1.text = res?.firstName
+        viewBinding.txtDisplayName.text = res?.firstName + " " + res?.lastName
+    }
 
+    override fun registerEvent() {
+        //TODO Logout handle in menu
         viewBinding.imageView.setOnClickListener {
             findNavController().navigateUp()
         }

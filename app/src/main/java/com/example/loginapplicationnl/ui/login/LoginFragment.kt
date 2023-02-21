@@ -1,11 +1,8 @@
 package com.example.loginapplicationnl.ui.login
 
 import android.os.Bundle
-import android.os.Handler
-import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
-import androidx.lifecycle.Observer
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.findNavController
 import com.example.loginapplicationnl.R
@@ -15,55 +12,52 @@ import com.example.loginapplicationnl.utils.ViewUtils.hideKeyboard
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
-    private val presenter: LoginViewModel by viewModel<LoginViewModel>()
-
-    lateinit var stringEmail: String
-    lateinit var stringPassword: String
-
+    private val viewModel: LoginViewModel by viewModel()
     override fun inflateViewBinding(inflater: LayoutInflater) =
         FragmentLoginBinding.inflate(inflater)
 
     override fun setUpView() {
-        createAccount()
-        doinits()
-    }
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        getLogin()
     }
 
-    private fun doinits() {
-        viewBinding.btnLogin.setOnClickListener() {
-            hideKeyboard()
-            stringEmail = viewBinding.edtEmail.text.toString().trim()
-            stringPassword = viewBinding.edtPassword.text.toString().trim()
-            if (!validateUserEmailorMobile() or !validateUserPassword()) {
-                showToast("error")
-                return@setOnClickListener
-            } else {
-                presenter.loginUser(email = stringEmail, pwd = stringPassword)
-            }
-        }
-    }
-
-    private fun getLogin() {
-        presenter.login.observe(this) {
+    override fun registerLiveData() {
+        viewModel.login.observe(this) {
             when (it) {
                 is LoginViewModel.LoginState.Loading -> showLoading()
                 is LoginViewModel.LoginState.Successful -> {
                     hideLoading()
-                    findNavController().navigate(R.id.action_loginFragment_to_welcomeFragment, args = Bundle().apply {
-                        putParcelable("LoginResponse", it.loginResponses )
-                    })
+                    findNavController().navigate(
+                        R.id.action_loginFragment_to_welcomeFragment,
+                        args = Bundle().apply {
+                            putParcelable("LoginResponse", it.loginResponses)
+                        })
                 }
                 is LoginViewModel.LoginState.Failure -> {
-                    showToast("That bai")
+                    showToast("Error get API")
                     hideLoading()
                 }
             }
         }
     }
 
+    override fun registerEvent() {
+        viewBinding.txtCreateAccount.setOnClickListener() {
+            Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_signUpFragment)
+        }
+
+        viewBinding.btnLogin.setOnClickListener() {
+            hideKeyboard()
+            val stringEmail = viewBinding.edtEmail.text.toString().trim()
+            val stringPassword = viewBinding.edtPassword.text.toString().trim()
+            if (!validateUserEmailorMobile() or !validateUserPassword()) {
+                showToast("Validation error")
+                return@setOnClickListener
+            } else {
+                viewModel.loginUser(email = stringEmail, pwd = stringPassword)
+            }
+        }
+    }
+
+    //TODO move to ViewModel
     private fun validateUserEmailorMobile(): Boolean {
         if (viewBinding.edtEmail.text.toString().isEmpty()
         ) {
@@ -76,6 +70,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         return true
     }
 
+    //TODO move to ViewModel
     private fun validateUserPassword(): Boolean {
         if (viewBinding.edtPassword.text.toString().isEmpty()
         ) {
@@ -87,11 +82,4 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         }
         return true
     }
-
-    private fun createAccount() {
-        viewBinding.txtCreateAccount.setOnClickListener() {
-            Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_signUpFragment)
-        }
-    }
-
 }

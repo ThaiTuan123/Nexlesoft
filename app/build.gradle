@@ -6,12 +6,12 @@ plugins {
 
 android {
     namespace 'com.example.loginapplicationnl'
-    compileSdk 31
+    compileSdk 33
 
     defaultConfig {
         applicationId "com.example.loginapplicationnl"
         minSdk 29
-        targetSdk 31
+        targetSdk 33
         versionCode 1
         versionName "1.0"
 
@@ -67,8 +67,8 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-ktx:2.5.1"
 
     //Navigation
-    implementation "androidx.navigation:navigation-fragment-ktx:2.5.0"
-    implementation "androidx.navigation:navigation-ui-ktx:2.5.0"
+    implementation "androidx.navigation:navigation-fragment-ktx:2.5.3"
+    implementation "androidx.navigation:navigation-ui-ktx:2.5.3"
 
     //Koin For AndroidX
     implementation "io.insert-koin:koin-android:3.3.3"

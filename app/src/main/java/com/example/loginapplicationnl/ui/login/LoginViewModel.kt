@@ -17,10 +17,6 @@ import retrofit2.Callback
 import retrofit2.Response
 
 class LoginViewModel(private val loginRepository: LoginRepository) : BaseViewModel() {
-
-    /*var loginResponses: LoginResponses =
-        LoginResponses(id = "", email = "", false, firstName = "", "", "", "", "");*/
-
     private val _login = MutableLiveData<LoginState>()
     val login: LiveData<LoginState>
         get() = _login

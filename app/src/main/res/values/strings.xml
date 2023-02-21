@@ -34,4 +34,6 @@
     <string name="msg_password">Password is required</string>
     <string name="title_welcome">Welcome to Demo App</string>
     <string name="hint_name">johndoe</string>
+    <string name="txt_status">Available</string>
+    <string name="txt_display_name">John Doe</string>
 </resources>
