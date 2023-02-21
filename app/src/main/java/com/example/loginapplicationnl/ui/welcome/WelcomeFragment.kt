@@ -11,12 +11,12 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding, WelcomeViewModel>()
         FragmentWelcomeBinding.inflate(inflater)
 
     override fun setUpView() {
-        //TODO setup view
+        val res = arguments?.getParcelable("LoginResponse") as? LoginResponses
+        viewBinding.txtDisplayName.text = res?.firstName + res?.lastName
     }
 
     override fun registerLiveData() {
-        val res = arguments?.getParcelable("LoginResponse") as? LoginResponses
-        viewBinding.txtDisplayName.text = res?.firstName + " " + res?.lastName
+
     }
 
     override fun registerEvent() {

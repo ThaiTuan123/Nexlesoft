@@ -2,6 +2,10 @@
 
 Name: Vo Pham Thai Tuan
 
+## Login account test
+email : test1@gmail.com
+password: 123455678
+
 ## Overview
 You need to implement the following screens & and sidemenu for this examination using real APIs integration. See UI section for more information.When the user opens the app, the Sign-In screen appears. Users can switch to the Sign-up screen by clicking on Create an account. Once user logged into the app successfully or signed up successfully, the blank dashboard screen shows. 
 
