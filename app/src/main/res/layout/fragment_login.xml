@@ -245,6 +245,5 @@
                 android:contentDescription="@string/ic_git"
                 android:src="@drawable/ic_git" />
         </LinearLayout>
-
     </androidx.appcompat.widget.LinearLayoutCompat>
 </androidx.constraintlayout.widget.ConstraintLayout>

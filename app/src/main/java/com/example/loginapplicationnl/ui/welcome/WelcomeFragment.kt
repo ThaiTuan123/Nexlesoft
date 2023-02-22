@@ -1,7 +1,9 @@
 package com.example.loginapplicationnl.ui.welcome
 
+import android.view.Gravity
 import android.view.LayoutInflater
 import androidx.navigation.fragment.findNavController
+import com.example.loginapplicationnl.R
 import com.example.loginapplicationnl.base.BaseFragment
 import com.example.loginapplicationnl.data.model.LoginResponses
 import com.example.loginapplicationnl.databinding.FragmentWelcomeBinding
@@ -12,7 +14,7 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding, WelcomeViewModel>()
 
     override fun setUpView() {
         val res = arguments?.getParcelable("LoginResponse") as? LoginResponses
-        viewBinding.txtDisplayName.text = res?.firstName + res?.lastName
+        viewBinding.txtDisplayName.text = res?.displayName
     }
 
     override fun registerLiveData() {
@@ -20,9 +22,16 @@ class WelcomeFragment : BaseFragment<FragmentWelcomeBinding, WelcomeViewModel>()
     }
 
     override fun registerEvent() {
-        //TODO Logout handle in menu
-        viewBinding.imageView.setOnClickListener {
-            findNavController().navigateUp()
+        viewBinding.toolbar.setNavigationOnClickListener {
+            viewBinding.drawerLayout.openDrawer(Gravity.LEFT)
+        }
+        viewBinding.navigationView.setNavigationItemSelectedListener {
+            when (it.itemId) {
+                R.id.itemLogout -> {
+                    findNavController().navigateUp()
+                }
+            }
+            true
         }
     }
 }

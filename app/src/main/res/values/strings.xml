@@ -36,4 +36,5 @@
     <string name="hint_name">johndoe</string>
     <string name="txt_status">Available</string>
     <string name="txt_display_name">John Doe</string>
+    <string name="btn_item_logout">Logout</string>
 </resources>
