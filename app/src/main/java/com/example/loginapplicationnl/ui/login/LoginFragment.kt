@@ -9,6 +9,7 @@ import com.example.loginapplicationnl.R
 import com.example.loginapplicationnl.base.BaseFragment
 import com.example.loginapplicationnl.databinding.FragmentLoginBinding
 import com.example.loginapplicationnl.utils.ViewUtils.hideKeyboard
+import com.example.loginapplicationnl.utils.exts.onClickListenerDelay
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
@@ -44,13 +45,13 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
             Navigation.findNavController(it).navigate(R.id.action_loginFragment_to_signUpFragment)
         }
 
-        viewBinding.btnLogin.setOnClickListener() {
+        viewBinding.btnLogin.onClickListenerDelay() {
             hideKeyboard()
             val stringEmail = viewBinding.edtEmail.text.toString().trim()
             val stringPassword = viewBinding.edtPassword.text.toString().trim()
             if (!validateUserEmailorMobile() or !validateUserPassword()) {
                 showToast("Validation error")
-                return@setOnClickListener
+                return@onClickListenerDelay
             } else {
                 viewModel.loginUser(email = stringEmail, pwd = stringPassword)
             }

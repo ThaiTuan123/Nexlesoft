@@ -36,7 +36,7 @@
                 style="@style/HeadingH4"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginTop="@dimen/_15sdp"
                 android:text="@string/txt_header_sign_up"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/imageView" />
@@ -71,6 +71,14 @@
                 tools:layout_editor_absoluteX="0dp" />
 
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtFirstNameErrorMessage"
+                style="@style/ParagraphSmallError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/msg_error_first_name"
+                android:visibility="invisible" />
+
+            <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtTitleLastName"
                 style="@style/Paragraph"
                 android:layout_width="match_parent"
@@ -89,6 +97,14 @@
                 android:paddingEnd="@dimen/_15sdp"
                 android:textColorHint="@color/french_gray"
                 tools:layout_editor_absoluteX="0dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtLastNameErrorMessage"
+                style="@style/ParagraphSmallError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/msg_error_last_name"
+                android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtTitleEmail"
@@ -116,7 +132,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/msg_email"
-                android:visibility="gone" />
+                android:visibility="invisible" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/txtTitlePassword"
@@ -140,6 +156,14 @@
                 android:paddingEnd="@dimen/_15sdp"
                 android:textColorHint="@color/french_gray"
                 tools:layout_editor_absoluteX="0dp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/txtPasswordErrorMessage"
+                style="@style/ParagraphSmallError"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/msg_password"
+                android:visibility="invisible" />
 
             <androidx.appcompat.widget.LinearLayoutCompat
                 android:layout_width="match_parent"
@@ -169,7 +193,7 @@
             </androidx.appcompat.widget.LinearLayoutCompat>
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/btnLogin"
+                android:id="@+id/btnSignUp"
                 style="@style/Button"
                 android:layout_width="@dimen/_280sdp"
                 android:layout_height="@dimen/_38sdp"
@@ -247,6 +271,8 @@
             </RelativeLayout>
 
             <LinearLayout
+                android:layout_marginTop="@dimen/_12sdp"
+                android:layout_marginBottom="@dimen/_50sdp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"

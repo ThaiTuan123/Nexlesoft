@@ -7,7 +7,6 @@
     <string name="txt_password">Password <font color='#EA5455'>*</font></string>
     <string name="cb_remember_me">Remember me</string>
     <string name="btn_login">Login</string>
-    <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="txt_header_login">Welcome to Entrance Test Interview!</string>
     <string name="txt_header_sign_up">Adventure starts here</string>
@@ -37,4 +36,6 @@
     <string name="txt_status">Available</string>
     <string name="txt_display_name">John Doe</string>
     <string name="btn_item_logout">Logout</string>
+    <string name="msg_error_first_name">First name is required</string>
+    <string name="msg_error_last_name">Last name is required</string>
 </resources>

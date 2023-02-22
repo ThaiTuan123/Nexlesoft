@@ -7,14 +7,8 @@ import com.example.loginapplicationnl.base.BaseViewModel
 import com.example.loginapplicationnl.data.model.LoginRequest
 import com.example.loginapplicationnl.data.model.LoginResponses
 import com.example.loginapplicationnl.data.repository.LoginRepository
-import com.example.loginapplicationnl.data.repository.LoginRepositoryImp
-import com.example.loginapplicationnl.di.viewModelModule
-import com.example.loginapplicationnl.utils.LogUtil
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import org.koin.java.KoinJavaComponent.inject
-import retrofit2.Callback
-import retrofit2.Response
 
 class LoginViewModel(private val loginRepository: LoginRepository) : BaseViewModel() {
     private val _login = MutableLiveData<LoginState>()
