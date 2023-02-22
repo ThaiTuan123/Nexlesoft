@@ -1,14 +1,15 @@
 package com.example.loginapplicationnl.ui.signUp
 
+import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import androidx.navigation.fragment.findNavController
+import com.example.loginapplicationnl.R
 import com.example.loginapplicationnl.base.BaseFragment
 import com.example.loginapplicationnl.databinding.FragmentSignUpBinding
 import com.example.loginapplicationnl.utils.ViewUtils.hideKeyboard
 import com.example.loginapplicationnl.utils.exts.onClickListenerDelay
 import org.koin.androidx.viewmodel.ext.android.viewModel
-
 
 class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>() {
     private val viewModel: SignUpViewModel by viewModel()
@@ -20,7 +21,23 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding, SignUpViewModel>() {
     }
 
     override fun registerLiveData() {
-        //TODO("Not yet implemented")
+        viewModel.signup.observe(this) {
+            when (it) {
+                is SignUpViewModel.SignUpState.Loading -> showLoading()
+                is SignUpViewModel.SignUpState.Successful -> {
+                    hideLoading()
+                    findNavController().navigate(
+                        R.id.action_signUpFragment_to_welcomeFragment,
+                        args = Bundle().apply {
+                            putParcelable("LoginResponse", it.loginResponses)
+                        })
+                }
+                is SignUpViewModel.SignUpState.Failure -> {
+                    showToast("Error get API")
+                    hideLoading()
+                }
+            }
+        }
     }
 
     override fun registerEvent() {

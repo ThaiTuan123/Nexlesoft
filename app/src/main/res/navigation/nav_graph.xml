@@ -20,7 +20,11 @@
     <fragment
         android:id="@+id/signUpFragment"
         android:name="com.example.loginapplicationnl.ui.signUp.SignUpFragment"
-        android:label="SignUpFragment" />
+        android:label="SignUpFragment" >
+        <action
+            android:id="@+id/action_signUpFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/welcomeFragment"
         android:name="com.example.loginapplicationnl.ui.welcome.WelcomeFragment"
