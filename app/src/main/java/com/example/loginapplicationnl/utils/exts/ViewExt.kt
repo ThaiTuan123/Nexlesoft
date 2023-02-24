@@ -24,6 +24,10 @@ fun View.show() {
     this.visibility = View.VISIBLE
 }
 
+fun View.invisible() {
+    this.visibility = View.VISIBLE
+}
+
 
 /**
  * Change visibility of view to Visible

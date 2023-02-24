@@ -12,5 +12,8 @@
     <color name="cornflower_blue">#7367F0</color>
     <color name="mandy">#EA5455</color>
     <color name="french_gray">#B9B9C3</color>
-
+    <color name="weak">#EA5455</color>
+    <color name="fair">#E3A063</color>
+    <color name="good">#647FFF</color>
+    <color name="strong">#59BC87</color>
 </resources>
