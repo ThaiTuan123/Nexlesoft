@@ -19,5 +19,7 @@ On the dashboard screen, the user can open the left menu using hamburger icon (s
 - [MVVM] - Design pattern
 
 ## Design
+[![Login-Mobile.png](https://i.postimg.cc/TY7XXFF5/Login-Mobile.png)](https://postimg.cc/N5Hn6JgQ)
+
 Follow the design from Figma to implement this test: https://www.figma.com/file/U2iq3TMMraabKGYwHbGZZk/?node-id=246%3A1334
 
