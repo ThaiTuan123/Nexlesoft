@@ -73,4 +73,13 @@ dependencies {
     //Koin For AndroidX
     implementation "io.insert-koin:koin-android:3.3.3"
 
+    //LeakCanary
+    debugImplementation 'com.squareup.leakcanary:leakcanary-android:2.10'
+
+    /*Debug Tools*/
+    implementation 'com.facebook.stetho:stetho-okhttp3:1.6.0'
+    implementation 'com.facebook.stetho:stetho:1.6.0'
+    debugImplementation "com.github.chuckerteam.chucker:library:3.5.2"
+    releaseImplementation "com.github.chuckerteam.chucker:library-no-op:3.5.2"
+
 }

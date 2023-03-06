@@ -23,6 +23,11 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         FragmentLoginBinding.inflate(inflater)
 
     override fun setUpView() {
+        // Fake data login
+        viewBinding.run {
+            edtEmail.setText("test1@gmail.com")
+            edtPassword.setText("12345678")
+        }
     }
 
     override fun registerLiveData() {
@@ -46,8 +51,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         viewModel.validateEmailObs.observe(this) {
             when (it) {
                 INVALID_EMAIL_EMPTY -> {
-                    viewBinding.txtEmailErrorMessage.show()
-                    viewBinding.edtEmail.requestFocus()
+                    viewBinding.run {
+                        txtEmailErrorMessage.show()
+                        edtEmail.requestFocus()
+                    }
                 }
                 INVALID_EMAIL_FORMAT -> {
                     viewBinding.txtEmailErrorMessage.text = getString(R.string.msg_email_valid)
@@ -59,8 +66,10 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
         viewModel.validatePasswordObs.observe(this) {
             when (it) {
                 INVALID_PWD_EMPTY -> {
-                    viewBinding.txtPasswordErrorMessage.show()
-                    viewBinding.edtPassword.requestFocus()
+                    viewBinding.run {
+                        txtPasswordErrorMessage.show()
+                        edtPassword.requestFocus()
+                    }
                 }
                 INVALID_PWD_FORMAT -> {
                     viewBinding.txtPasswordErrorMessage.text =
@@ -100,5 +109,4 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
             }
         }
     }
-
 }
