@@ -67,7 +67,7 @@ class LoginFragment : BaseFragment<FragmentLoginBinding, LoginViewModel>() {
                         getString(R.string.msg_password_message)
                     viewBinding.txtPasswordErrorMessage.show()
                 }
-                else -> showToast("Error")
+                else -> showToast(getString(R.string.msg_error))
             }
         }
     }

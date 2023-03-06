@@ -43,4 +43,5 @@
     <string name="mes_checkbox_press_agree">Please press agree</string>
     <string name="msg_char_first_name">The first name must be at least 2 characters</string>
     <string name="mes_char_last_name">The last name must be at least 2 characters</string>
+    <string name="msg_error">Error</string>
 </resources>
