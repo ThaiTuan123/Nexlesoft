@@ -19,6 +19,7 @@ class ProgressDialog(context: Context) : Dialog(context) {
         setCanceledOnTouchOutside(false)
     }
 
+    @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
         super.onBackPressed()
         dismiss()
